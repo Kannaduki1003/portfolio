@@ -1,0 +1,100 @@
+/* ===== 基本設定 ===== */
+body {
+  font-family: "Noto Serif JP", "EB Garamond", serif;
+  margin: 0;
+  background: #aeaeae;
+  color: #dcd6e8;
+}
+
+/* ===== ヘッダー ===== */
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background: #aeaeae;
+  height: 100px;
+}
+
+/* ロゴ */
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+/* ===== ナビゲーション ===== */
+.main-nav{
+  display: flex;         /*   親リンクを横並びに */
+}
+
+.main-nav ul {
+  /*display: flex;            親リンクを横並びに */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 32px;
+}
+
+.main-nav li {
+  position: relative;      /* ドロップダウンの基準 */
+  margin: 20px;
+}
+
+.main-nav a {
+  display: block;
+  color: #dcd6e8;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 0;
+  transition: color 0.3s;
+}
+
+.main-nav a:hover {
+  color: #c9baff;
+}
+
+/* ===== ドロップダウンメニュー ===== */
+.dropdown-menu {
+  display: none;           /* 初期状態では非表示 */
+  position: absolute;
+  top: 100%;               /* 親の真下に配置 */
+  left: 0;
+  background-color: #1a1625;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  flex-direction: column;  /* 縦並び */
+  min-width: 180px;
+  z-index: 100;
+  padding: 0;
+  list-style: none;
+}
+
+/* マウスホバー時のみ表示 */
+.dropdown:hover > .dropdown-menu {
+  display: flex;
+}
+
+/* ドロップダウン内のリンク */
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 20px;
+  white-space: nowrap;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  color: #dcd6e8;
+}
+
+.dropdown-menu li:last-child a {
+  border-bottom: none;
+}
+
+.dropdown-menu li a:hover {
+  background-color: rgba(255,255,255,0.1);
+  color: #c9baff;
+}
+
+/* スマホ用メニュー（今回は未使用） */
+#nav-toggle {
+  display: none;
+}
